@@ -34,7 +34,9 @@ function App() {
 					<AppShell.Section>Settings</AppShell.Section>
 				</AppShell.Navbar>
 
-				<AppShell.Main>Main</AppShell.Main>
+				<AppShell.Main>
+
+				</AppShell.Main>
 			</AppShell>
 		}
 	</MantineProvider>
