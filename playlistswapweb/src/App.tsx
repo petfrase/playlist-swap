@@ -1,26 +1,43 @@
-import { useState } from 'react'
+import '@mantine/core/styles.css';
+import { AppShell, MantineProvider, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import './App.css';
 
 function App() {
-	const [count, setCount] = useState(0)
+	const [opened, { toggle }] = useDisclosure();
 
-	return (
-		<>
-			<div>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
-	)
+	return <MantineProvider>
+		{
+			<AppShell
+				header={{ height: 60 }}
+				navbar={{
+					width: 300,
+					breakpoint: 'sm',
+					collapsed: { mobile: !opened },
+				}}
+				padding="md"
+			>
+				<AppShell.Header className="header-bar">
+					<Burger
+						opened={opened}
+						onClick={toggle}
+						hiddenFrom="sm"
+						size="sm"
+						color="white"
+					/>
+					<h1>PlayList Swap</h1>
+				</AppShell.Header>
+
+				<AppShell.Navbar p="md">
+					<AppShell.Section>Home</AppShell.Section>
+					<AppShell.Section>Profile</AppShell.Section>
+					<AppShell.Section>Settings</AppShell.Section>
+				</AppShell.Navbar>
+
+				<AppShell.Main>Main</AppShell.Main>
+			</AppShell>
+		}
+	</MantineProvider>
 }
 
 export default App
