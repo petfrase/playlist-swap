@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gorilla/mux"
-	"playlist-swap/middleware"
+	"github.com/petfrase/playlist-swap/middleware"
 )
 
 func Router() *mux.Router {
