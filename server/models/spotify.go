@@ -50,3 +50,11 @@ type SpotifyOwner struct {
 	URI         string `json:"uri"`
 	DisplayName string `json:"display_name"`
 }
+
+type SpotifyTokenResponse struct {
+	AccessToken  string `json:"access_token"`
+	TokenType    string `json:"token_type"`
+	ExpiresIn    int    `json:"expires_in"`
+	Scope        string `json:"scope"`
+	RefreshToken string `json:"refresh_token"`
+}

@@ -16,3 +16,9 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+
+.no-link-style {
+	color: inherit; /* Make the color the same as the surrounding text */
+	text-decoration: none; /* Remove underline */
+	cursor: default; /* Optional: Change the cursor to default instead of pointer */
+}

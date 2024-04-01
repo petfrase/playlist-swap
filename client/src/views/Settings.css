@@ -1,0 +1,11 @@
+.settings-container {
+	display: flex;
+	flex-direction: row;
+	align-items: left;
+	margin-top: 20px;
+}
+
+/* class for items in the settings container */
+.settings-container .settings-card {
+	flex: 0 0 300px;
+}
