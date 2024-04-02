@@ -105,6 +105,8 @@ func FetchSpotifyPlaylists(accessToken string, offset int, limit int) ([]models.
 	// Set the authorization header
 	req.Header.Set("Authorization", "Bearer "+accessToken)
 
+	fmt.Println("token:", accessToken)
+
 	// Create a new HTTP client and send the request
 	client := &http.Client{}
 	resp, err := client.Do(req)
@@ -145,6 +147,7 @@ func FetchSpotifyPlaylists(accessToken string, offset int, limit int) ([]models.
 			Name:        playlist.Name,
 			Description: playlist.Description,
 			ImageUrl:    imageUrl,
+			Owner:       playlist.Owner.DisplayName,
 		})
 	}
 

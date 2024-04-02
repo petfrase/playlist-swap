@@ -16,7 +16,7 @@ function Settings() {
 				<Card.Section>
 					<Text
 						ta="left"
-						size="xl"
+						size="lg"
 						py={8}
 						px={12}
 					>

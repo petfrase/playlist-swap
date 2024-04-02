@@ -7,7 +7,7 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
-				path: "/profile"
+				path: "/playlists"
 			},
 			{
 				path: "/settings"

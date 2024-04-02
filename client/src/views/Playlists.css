@@ -1,0 +1,35 @@
+.playlists-header {
+	display: flex;
+	flex-direction: row;
+	margin: 0px 10px;
+}
+
+.playlists-container {
+	display: flex;
+	flex-direction: row;
+	align-items: left;
+	margin: 0px 10px;
+	gap: 10px;
+	overflow-x: auto;
+	padding: 12px 0px;
+}
+
+/* class for items in the settings container */
+.playlists-container .playlists-card {
+	flex: 0 0 200px;
+	padding-bottom: 12px;
+}
+
+.playlists-owner {
+	color: #c2c2c2;
+	gap: 8px;
+	padding-bottom: 8px;
+}
+
+.spotify-card {
+	background-color: #191414;
+}
+
+.spotify-text {
+	color: white;
+}

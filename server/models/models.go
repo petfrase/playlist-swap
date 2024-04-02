@@ -14,4 +14,5 @@ type Playlist struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	ImageUrl    string `json:"imageUrl"`
+	Owner       string `json:"owner"`
 }

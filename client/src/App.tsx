@@ -9,6 +9,7 @@ import Home from './views/Home';
 import { useEffect, useState } from 'react';
 import ServiceRedirectHandler from './views/ServiceRedirectHandler';
 import { API } from './utils/Axios';
+import Playlists from './views/Playlists';
 
 interface INavigationItem {
 	id: number;
@@ -19,7 +20,7 @@ interface INavigationItem {
 
 const navigationItems: INavigationItem[] = [
 	{ id: 0, label: 'Home', to: '/' },
-	{ id: 1, label: 'Profile', to: '/profile' },
+	{ id: 1, label: 'Playlists', to: '/playlists' },
 	{ id: 2, label: 'Settings', to: '/settings' },
 ]
 
@@ -100,7 +101,7 @@ function App() {
 				{/* Add the Routes below */}
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/profile" element={<div>Profile WIP</div>} />
+						<Route path="/playlists" element={<Playlists />} />
 						<Route path="/settings" element={<Settings />} />
 						<Route path="/settings/:type/redirect" element={<ServiceRedirectHandler />} />
 					</Routes>
