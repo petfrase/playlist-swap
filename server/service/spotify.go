@@ -103,8 +103,7 @@ func FetchSpotifyPlaylists(accessToken string, offset int, limit int) ([]models.
 	}
 
 	// Set the authorization header
-	tempToken := "idk"
-	req.Header.Set("Authorization", "Bearer "+tempToken)
+	req.Header.Set("Authorization", "Bearer "+accessToken)
 
 	// Create a new HTTP client and send the request
 	client := &http.Client{}
@@ -133,11 +132,19 @@ func FetchSpotifyPlaylists(accessToken string, offset int, limit int) ([]models.
 	// Conveert the Spotify playlists to generic playlists
 	var genericPlaylists []models.Playlist
 	for _, playlist := range playlists {
+		var imageUrl string
+		if len(playlist.Images) > 0 {
+			imageUrl = playlist.Images[0].URL
+		} else {
+			// Set a default imageUrl or leave it as an empty string
+			imageUrl = "path/to/default/image.jpg" // Example default image URL
+		}
+
 		genericPlaylists = append(genericPlaylists, models.Playlist{
 			ID:          playlist.ID,
 			Name:        playlist.Name,
 			Description: playlist.Description,
-			ImageUrl:    playlist.Images[0].URL,
+			ImageUrl:    imageUrl,
 		})
 	}
 
